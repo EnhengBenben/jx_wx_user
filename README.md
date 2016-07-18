@@ -1,4 +1,4 @@
-# sys
+# jx_wx_user
 ## install
 
 runing npm install and bower install for install package 
