@@ -1,0 +1,106 @@
+<!--<div class="ibox">-->
+  <!--<div class="ibox-content" style="background-color: #FFF;padding: 0" fullscreen="">-->
+    <!--<div class="ibox">-->
+      <!--<div class="ibox-content" style="border-top: inherit;padding-right: 0">-->
+        <!--<div>-->
+          <!--<h2 style="margin:0 auto 15px;padding-bottom: 10px;color: #333;padding-left: 33px;text-align: left">{{vm.show.name}}</h2>-->
+        <!--</div>-->
+        <!--<div class="row" style="margin-left: 0;margin-right: 0;position: relative;height: 26px">-->
+          <!--<img ng-src="images/icon_miaoshu.png" style="position: absolute;height: 18px;top: 4px;left: 4px;"/>-->
+        <!--</div>-->
+        <!--<div class="row" style="margin-right: 25px;margin-left: 35px">-->
+          <!--<div class="col-xs-10"-->
+               <!--style="color: #4d4d4d;padding-left: 0;margin-top: -13px;border-top: 1px solid #d2d2d2;padding-top: 16px">-->
+            <!--<p style="margin: 4px 0;">申请截止 : {{vm.show.application_deadline}}</p>-->
+          <!--</div>-->
+          <!--<div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">-->
+            <!--<p style="margin: 4px 0;">发榜日期 : {{vm.show.announcement_date}}</p>-->
+          <!--</div>-->
+          <!--<div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">-->
+            <!--<p style="margin: 4px 0;">报到日期 : {{vm.show.enrollment_date}}</p>-->
+          <!--</div>-->
+          <!--<div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">-->
+            <!--<p style="margin: 4px 0;">结业日期 : {{vm.show.graduation_date}}</p>-->
+          <!--</div>-->
+          <!--<div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">-->
+            <!--<p style="margin: 4px 0;">进修时间 : {{vm.show.period}}</p>-->
+          <!--</div>-->
+          <!--<div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">-->
+            <!--<p style="margin: 4px 0;">进修费用 : {{vm.show.fee}}</p>-->
+          <!--</div>-->
+          <!--<div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">-->
+            <!--<p style="margin: 4px 0;">开班科室 : {{vm.show.department.data.name}}</p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div ng-if="vm.show.attachments.length" style="margin-top: 10px">-->
+          <!--<div style="position: relative;height: 26px">-->
+            <!--<img ng-src="images/icon_fujian.png" style="position: absolute;left: 0;height: 18px;top: 4px;left: 4px"/>-->
+          <!--</div>-->
+          <!--<div style=" margin-right: 26px   ;margin-left: 34px;margin-top: -13px;border-top: 1px solid #d2d2d2;" ng-if="vm.show.attachments">-->
+            <!--<a  ng-repeat="i in vm.show.attachments" href="{{i.url}}" style="margin: 20px 0 0;display: block;font-size: 1.3rem;color: #00EBC6;">{{i.name}}</a><br/>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row" style="margin-left: 0;margin-right: 0;position: relative;height: 26px">-->
+          <!--<img ng-src="images/icon_xiangqing.png" style="position: absolute;left: 0;height: 18px;top: 4px;left: 4px">-->
+        <!--</div>-->
+        <!--<div class="row" style="margin-right: 10px;margin-left: 35px">-->
+          <!--<div class="col-xs-12" id="info"-->
+               <!--style="color: #4d4d4d;padding-left: 0;margin-top: -13px;border-top: 1px solid #d2d2d2;padding-top: 20px;padding-right: 0">-->
+
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+<div class="ibox">
+  <div class="ibox-content" style="background-color: #FFF;padding: 0" fullscreen="">
+    <div class="ibox">
+      <div class="ibox-content" style="border-top: inherit;padding-right: 3%;padding-left: 3%;padding-top: 25px">
+        <div>
+          <h2 style="margin:0 auto 15px;padding-bottom: 10px;color: #333;padding-left: 6px;text-align: left">{{vm.show.name}}</h2>
+        </div>
+        <div class="row" style="margin-right: 10px;padding-left: 28px;position: relative;margin-left: 10px;border-top: 1px solid #f3f3f4;padding-top: 10px;padding-bottom: 10px">
+          <img ng-src="images/icon_miaoshu.png" style="position: absolute;height: 18px;top: 16px;left: 2px;"/>
+          <div class="col-xs-10"
+               style="color: #4d4d4d;padding-left: 0;margin-top: -10px;padding-top: 14px">
+            <p style="margin: 4px 0;">申请截止 : {{vm.show.application_deadline}}</p>
+          </div>
+          <div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">
+            <p style="margin: 4px 0;">发榜日期 : {{vm.show.announcement_date}}</p>
+          </div>
+          <div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">
+            <p style="margin: 4px 0;">报到日期 : {{vm.show.enrollment_date}}</p>
+          </div>
+          <div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">
+            <p style="margin: 4px 0;">结业日期 : {{vm.show.graduation_date}}</p>
+          </div>
+          <div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">
+            <p style="margin: 4px 0;">进修时间 : {{vm.show.period}}</p>
+          </div>
+          <div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">
+            <p style="margin: 4px 0;">进修费用 : {{vm.show.fee}}</p>
+          </div>
+          <div class="col-xs-12" style="color: #4d4d4d;padding-left: 0;">
+            <p style="margin: 4px 0;">开班科室 : {{vm.show.department.data.name}}</p>
+          </div>
+        </div>
+        <div ng-if="vm.show.attachments.length" style="margin-top: 10px">
+          <div style=" margin-right: 10px   ;margin-left: 11px;margin-top: 10px;border-top: 1px solid #f3f3f4;position: relative" ng-if="vm.show.attachments">
+            <img ng-src="images/icon_fujian.png" style="position: absolute;height: 18px;top: 14px;left: 2px"/><a  ng-repeat="i in vm.show.attachments" href="{{i.url}}" style="margin-top: 14px;margin-bottom: 11px;margin-left: 26px;display: block;font-size: 1.4rem;color: #28b294;">{{i.name}}</a><br/>
+          </div>
+        </div>
+        <div class="row" style="margin-right: 10px;margin-left: 10px;position: relative">
+          <img ng-src="images/icon_xiangqing.png" style="position: absolute;height: 18px;top: 18px;left: 4px">
+          <div class="col-xs-12" id="info" style="color: #4d4d4d;border-top: 1px solid #f3f3f4;padding-top: 14px;padding-right: 0;padding-left: 30px">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

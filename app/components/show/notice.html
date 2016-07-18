@@ -1,0 +1,23 @@
+<div class="ibox">
+  <div class="ibox-content" style="background-color: #FFF;padding: 0" fullscreen="">
+    <div class="ibox">
+      <div class="ibox-content" style="padding: 10px 3%;">
+        <div>
+          <h3 style="color: #333;font-size: 1.8rem">{{vm.show.name}}</h3>
+          <small>{{vm.show.published_at}}</small>
+        </div>
+        <div class="row" style="padding: 0 15px;margin-top: 10px;">
+          <div class="col-xs-12" style="padding: 0">
+            <div class="col-xs-12" id="info" style="padding-left: 0;padding-right: 0">
+            </div>
+          </div>
+        </div>
+        <div ng-if="vm.show.attachments.length" style="margin: 10px -10px;">
+          <div style=" margin-right: 10px   ;margin-left: 11px;margin-top: 10px;border-top: 1px solid #f3f3f4;position: relative" ng-if="vm.show.attachments">
+            <img ng-src="images/icon_fujian.png" style="position: absolute;height: 18px;top: 13px;left: 2px"/><a  ng-repeat="i in vm.show.attachments" href="{{i.url}}" style="margin-top: 11px;margin-bottom: 11px;margin-left: 26px;display: block;font-size: 1.4rem;color: #28b294;">{{i.name}}</a><br/>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>

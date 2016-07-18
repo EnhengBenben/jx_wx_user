@@ -1,0 +1,43 @@
+<div class="row page-container" style="background-color: #FFF;">
+  <div class="col-xs-12 col-lg-offset-3 col-lg-6" fullscreen>
+    <div class="ibox" style="padding: 30px 20px">
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-4" style="text-align: center">
+          <img ng-src="images/logo@2x.png">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" style="text-align: center;margin: 10px 0 40px;color: #00C6a2;">
+          <h3>登陆进修申请服务</h3>
+        </div>
+      </div>
+      <hr style="margin:0 -20px ;"/>
+      <div class="row" style="position: relative">
+        <div class="col-xs-4 col-xs-offset-4 line-font">
+          <p>登陆查询申请状态</p>
+        </div>
+      </div>
+      <form action="" method="post" id="submit">
+      <input class="_input" type="tel" form="submit" id="tel" placeholder="手机号码" required ng-model="vm.register.username"><br>
+      <input class="_input" type="password" form="submit" id="password" placeholder="登录密码" required ng-model="vm.register.password">
+      <div id="submit-button" class="btn btn-primary" ng-click="vm.login()" style="margin-top: 20px;padding: 0">登陆</div>
+      <div class="row" style="text-align: right;padding-right: 15px;margin-top: 10px">
+        <a ui-sref="password">忘记密码?</a>
+      </div>
+      <div class="row" style="text-align: center">
+        <p>没有账户</p>
+      </div>
+      <div class="submit-button" style="background-color: inherit;color: #29bc98;border: 1px solid #29bc98;margin-top: 10px;width: 100%" ui-sref="register" ng-mouseenter="vm.down()">注册</div>
+      </form>
+    </div>
+    <div class="footer" style="position: relative">
+      <p class="m-t text-center">
+        <small> 北京丛林网络技术有限责任公司</small><br/>
+        <small>服务电话:4000687626&nbsp;服务邮件:service@conglinnet.com</small>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,22 @@
+<div ui-view></div>
+<div class="menu">
+  <div class="navTab" style="height: 49px">
+    <ul class="list-unstyled row" style="margin: 0">
+      <li ui-sref-active="active courses-active" class="col-xs-4 courses" style="height: 48px;" ui-sref="admin.hospital.courses.list({id:$localStorage.hospitalId,name:$localStorage.hospitalName})">
+        <div class="col-xs-12" style="margin-top: 31px">
+          <a>进修班</a>
+        </div>
+      </li>
+      <li ui-sref-active="active notices-active" class="col-xs-4 notices" style="height: 48px"  ui-sref="admin.hospital.notice.list({id:$localStorage.hospitalId,name:$localStorage.hospitalName})">
+        <div class="col-xs-12" style="margin-top: 31px">
+          <a>进修公告</a>
+        </div>
+      </li>
+      <li ui-sref-active="active connect-active" class="col-xs-4 connect" style="height: 48px" ui-sref="admin.hospital.contact.list({id:$localStorage.hospitalId,name:$localStorage.hospitalName})">
+        <div class="col-xs-12" style="margin-top: 31px">
+          <a>联系方式</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

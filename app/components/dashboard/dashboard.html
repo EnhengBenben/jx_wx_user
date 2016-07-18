@@ -1,0 +1,16 @@
+<div class="ibox">
+  <div class="ibox-content"  style="background-color: #eee;padding:0 4px 10px" fullscreen="">
+    <div class="top-bar">
+      <img ng-src="images/icons/image_laba.png" style="margin-right: 4px;margin-top: -8px"/><p style="display: inline-block">请通过电脑浏览器打开招生单位申请网址</p>
+    </div>
+    <div class="row card" ng-click="vm.hospital(i)" style="margin-bottom: 1px" ng-repeat="i in vm.hospitals">
+      <div class="col-xs-12">
+        <h3 style="color: #4d4d4d;font-size: 1.8rem">{{i.name}}</h3>
+        <div style="color: #878787;">
+          <p><span style="color: #02BE9B;">{{i.course_num}}</span>个进修班在招生<img ng-src="images/icons/image_jiantou.png" style="float: right" /></p>
+        </div>
+        <p style="color: #333;font-size: 1.4rem">申请网址:&nbsp;{{i.domain_name}}</p>
+      </div>
+    </div>
+  </div>
+</div>

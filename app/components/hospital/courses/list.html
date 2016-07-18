@@ -1,0 +1,72 @@
+<div class="ibox">
+  <div class="ibox-content" style="background-color: #eee;padding: 0 15px;padding-bottom: 30px" fullscreen="">
+    <form class="row topTab form-horizontal" novalidate>
+      <div class="col-xs-6" style="padding: 0" ng-click="vm.clickShow()">
+        <!--<ul class="unstyled" style="margin-bottom: 0">-->
+          <!--<li>招生年份</li>-->
+          <!--<li style="position: absolute;background-color: #FFF;width: 100%;z-index: 100;">-->
+            <!--<ul class="unstyled animated fadeInDown" style="box-shadow: 2px 2px 8px #4d4d4d;">-->
+              <!--<li ng-repeat="i in vm.years" style="height: 30px;line-height: 30px;color: #4d4d4d;">-->
+                <!--{{i}}-->
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</li>-->
+        <!--</ul>-->
+        <label style="margin-bottom: 0;position: relative">
+        <select class="choice" ng-model=vm.filter.year ng-options=" y for y in vm.years"
+                style="background-color: inherit;border: inherit;position: relative">
+          <option value="">招生年份</option>
+        </select>
+          <img ng-src="images/icons/icon_arrow.png" style="position: absolute;display: inline-block;width: 15px;top: 20px;right: -15px;">
+        </label>
+      </div>
+      <div class="col-xs-6">
+        <label style="margin-bottom: 0;position: relative">
+        <select class="choice" ng-model=vm.filter.department style="background-color: inherit;border: inherit;position: relative"
+                ng-options="d.name as d.name for d in vm.departments">
+          <option value="">全部科室</option>
+        </select>
+          <img ng-src="images/icons/icon_arrow.png" style="position: absolute;display: inline-block;width: 15px;top: 20px;right: -15px;">
+        </label>
+      </div>
+    </form>
+    <div class="spiner-example" ng-if="!vm.courses">
+      <div class="sk-spinner sk-spinner-fading-circle">
+        <div class="sk-circle1 sk-circle"></div>
+        <div class="sk-circle2 sk-circle"></div>
+        <div class="sk-circle3 sk-circle"></div>
+        <div class="sk-circle4 sk-circle"></div>
+        <div class="sk-circle5 sk-circle"></div>
+        <div class="sk-circle6 sk-circle"></div>
+        <div class="sk-circle7 sk-circle"></div>
+        <div class="sk-circle8 sk-circle"></div>
+        <div class="sk-circle9 sk-circle"></div>
+        <div class="sk-circle10 sk-circle"></div>
+        <div class="sk-circle11 sk-circle"></div>
+        <div class="sk-circle12 sk-circle"></div>
+      </div>
+    </div>
+    <p ng-if="!vm.courses.length&&vm.courses" style="text-align: center;margin-top: 50px">暂无数据</p>
+    <div id="courseBox" class="ibox" ui-sref="admin.course({id: i.id })" ng-repeat="i in vm.courses" style="margin-bottom: 0">
+      <div class="ibox-content" style="background-color: #FFF;margin:0 -15px 10px;padding: 0;height: 120px">
+        <div style="height: 58px;padding: 10px 16px;overflow: hidden;padding-top: 6px">
+          <h3 style="color: #4d4d4d;line-height: 20px;margin-top: 15px">{{i.name}}</h3>
+        </div>
+        <div class="row" style="padding: 6px 0;margin-left: 0;margin-right: 0;font-size: 1.4rem;color: #747474;padding-bottom: 0">
+          <div class="col-xs-6" style="color: #747474;margin-top: -3px">
+            申请截止 : <span>{{i.application_deadline}}</span>
+          </div>
+          <div class="col-xs-6" style="margin-top: -3px">
+            招生人数 : <span>{{i.student_range}}</span>
+          </div>
+          <div class="col-xs-6">
+            进修时间 : <span>{{i.period}}</span>
+          </div>
+          <div class="col-xs-6">
+            进修费用 : <span>{{i.fee}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

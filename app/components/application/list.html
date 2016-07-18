@@ -1,0 +1,168 @@
+<div class="ibox">
+  <div class="ibox-content" style="background-color: #00BA95" fullscreen="">
+    <div class="ibox">
+        <div class="ibox-content" style="padding: 0;margin-bottom: 10px" ng-if="!(vm.show.length || vm.hideDefault)">
+          <div class="card-application" style="text-align: center">
+            欢迎使用医护进修申请服务
+          </div>
+          <div style="width: 86px;margin: 10px auto;margin-top: 20px;margin-bottom: 9px">
+            <img ng-src="images/icons/image_cry.png" style="width: 100%">
+          </div>
+          <div class="card-content">
+            <h2>没有申请记录</h2>
+            <p>欢迎进入相应网站申请进修班</p>
+          </div>
+          <div class="ibox-content card-footer" ui-sref="admin.dashboard">
+            <p>进修招生单位<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+      <div ng-repeat="i in vm.show">
+        <!--<div class="ibox-content" style="padding: 0;margin-bottom: 10px" ng-if="i.status == '未提交申请表'">-->
+          <!--<div class="card-application" ui-sref="admin.course({id: i.course.data.id })">-->
+            <!--{{i.course.data.name}}-->
+          <!--</div>-->
+          <!--<div  style="width: 86px;margin: 10px auto;margin-top: 20px;margin-bottom: 9px">-->
+            <!--<img ng-src="images/icons/image_cry.png" style="width: 100%">-->
+          <!--</div>-->
+          <!--<div class="card-content">-->
+            <!--<h2>未提交申请表</h2>-->
+            <!--<p>请登录申请网站上传申请电子表</p>-->
+            <!--<p>截止日期 : {{i.course.data.application_deadline}}</p>-->
+          <!--</div>-->
+          <!--<div class="ibox-content card-footer" ng-click="vm.hospital(i.course.data.hospital.data)">-->
+            <!--<p>{{i.course.data.hospital.data.name}}<i class="fa fa-angle-right" aria-hidden="true"></i></p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <div class="ibox-content" style="padding: 0;margin-bottom: 10px" ng-if="i.status == '已接受进修' || i.status == '已接受调班'">
+          <div class="card-application" ng-if="i.status == '已接受进修'"  ui-sref="admin.course({id: i.course.data.id })">
+            {{i.course.data.name}}
+          </div>
+          <div class="card-application" ng-if="i.status == '已接受调班'"  ui-sref="admin.course({id: i.transferCourse.data.id })">
+            {{i.transferCourse.data.name}}
+          </div>
+          <div style="width: 86px;margin: 10px auto;margin-top: 20px;margin-bottom: 9px">
+            <img ng-src="images/icons/image_smile.png" style="width: 100%">
+          </div>
+          <div class="card-content">
+            <h2>欢迎进修</h2>
+            <p>请到网站下载录取通知书和进修须知,按要求报到</p>
+            <p ng-if="i.status == '已接受'">报到日期 : {{i.course.data.application_deadline}}</p>
+            <p ng-if="i.status == '已接受调班'">报到日期 : {{i.transferCourse.data.application_deadline}}</p>
+            <!--<div class="row">-->
+              <!--<div class="col-xs-6">-->
+                <!--<a class="icon-application" ng-click="vm.admission(i.id)">录取通知书</a>-->
+              <!--</div>-->
+              <!--<div class="col-xs-6">-->
+                <!--<a class="icon-application" href="{{i.attachments[0].url}}">进修须知</a>-->
+              <!--</div>-->
+            <!--</div>-->
+          </div>
+          <div class="ibox-content card-footer" ng-click="vm.hospital(i.course.data.hospital.data)">
+            <p>{{i.course.data.hospital.data.name}}<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+        <div class="ibox-content" style="padding: 0;margin-bottom: 10px" ng-if="i.status == '已拒绝进修' || i.status == '已拒绝调班'">
+          <div class="card-application" ui-sref="admin.course({id: i.course.data.id })">
+            {{i.course.data.name}}
+          </div>
+          <div style="width: 86px;margin: 10px auto;margin-top: 20px;margin-bottom: 9px">
+            <img ng-src="images/icons/image_cry.png" style="width: 100%">
+          </div>
+          <div class="card-content">
+            <h2>您已拒绝进修</h2>
+            <p>感谢您的申请,欢迎申请其他进修班,谢谢</p>
+          </div>
+          <div class="ibox-content card-footer" ng-click="vm.hospital(i.course.data.hospital.data)">
+            <p>{{i.course.data.hospital.data.name}}<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+
+        <div class="ibox-content" style="padding: 0;margin-bottom: 10px" ng-if="i.status == '申请未通过'">
+          <div class="card-application"  ui-sref="admin.course({id: i.course.data.id })">
+            {{i.course.data.name}}
+          </div>
+          <div style="width: 86px;margin: 10px auto;margin-top: 20px;margin-bottom: 9px">
+            <img ng-src="images/icons/image_cry.png" style="width: 100%">
+          </div>
+          <div class="card-content">
+            <h2>您的申请未通过</h2>
+            <p>感谢您的申请,欢迎申请其他进修班,谢谢</p>
+          </div>
+          <div class="ibox-content card-footer" ng-click="vm.hospital(i.course.data.hospital.data)">
+            <p>{{i.course.data.hospital.data.name}}<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+        <div class="ibox-content" style="padding: 0;margin-bottom: 10px" ng-if="i.status == '待确认通过'">
+          <div class="card-application"  ui-sref="admin.course({id: i.course.data.id })">
+            {{i.course.data.name}}
+          </div>
+          <div style="width: 86px;margin: 10px auto;margin-top: 20px;margin-bottom: 9px">
+            <img ng-src="images/icons/image_smile.png" style="width: 100%">
+          </div>
+          <div class="card-content">
+            <h2>申请已通过</h2>
+            <p>请尽快确认是否进修</p>
+            <div class="row">
+              <div class="col-xs-6">
+                <a class="icon-no" ng-click="vm.pass(i.id,false)">暂不进修</a>
+              </div>
+              <div class="col-xs-6">
+                <a class="icon-yes" ng-click="vm.pass(i.id,true)">确认进修</a>
+              </div>
+            </div>
+          </div>
+          <div class="ibox-content card-footer" ng-click="vm.hospital(i.course.data.hospital.data)" style="margin-top: 0">
+            <p>{{i.course.data.hospital.data.name}}<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+
+        <div class="ibox-content" style="padding: 0;margin-bottom: 10px" ng-if="i.status == '待确认调班'">
+          <div class="card-application"  ui-sref="admin.course({id: i.course.data.id })">
+            {{i.course.data.name}}
+          </div>
+          <div style="width: 86px;margin: 10px auto;margin-top: 20px;margin-bottom: 9px">
+            <img ng-src="images/icons/image_smile.png" style="width: 100%">
+          </div>
+          <div class="card-content">
+            <h2>您被调整到以下进修班</h2>
+            <a ui-sref="admin.course({id: i.transferCourse.data.id})">{{i.transferCourse.data.name}}</a>
+            <p style="margin-top: 10px">请尽快确认是否同意调班,确认截止 : {{i.transferCourse.data.application_deadline}}</p>
+            <div class="row">
+              <div class="col-xs-6">
+                <a class="icon-no" ng-click="vm.transfer(i.id,false)">拒绝调班</a>
+              </div>
+              <div class="col-xs-6">
+                <a class="icon-yes" ng-click="vm.transfer(i.id,true)">确认调班</a>
+              </div>
+            </div>
+          </div>
+          <div class="ibox-content card-footer" ng-click="vm.hospital(i.course.data.hospital.data)" style="margin-top: 0">
+            <p>{{i.course.data.hospital.data.name}}<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+
+        <div class="ibox-content" style="padding: 0;margin-bottom: 10px" ng-if="i.status == '待审核'">
+          <div class="card-application"  ui-sref="admin.course({id: i.course.data.id })">
+            {{i.course.data.name}}
+          </div>
+          <div style="width: 86px;margin: 10px auto;margin-top: 20px;margin-bottom: 9px">
+            <img ng-src="images/icons/image_smile.png" style="width: 100%">
+          </div>
+          <div class="card-content">
+            <h2>您的申请正在审核</h2>
+            <p>审核结果发布日期 : {{i.confirm_deadline}}</p>
+            <p style="margin-top: 10px">您可以随时取消申请</p>
+            <div class="row">
+              <div class="col-xs-6 col-xs-offset-3">
+                <a class="icon-no" ng-click="vm.remove(i.id)">取消申请</a>
+              </div>
+            </div>
+          </div>
+          <div class="ibox-content card-footer" ng-click="vm.hospital(i.course.data.hospital.data)" style="margin-top: 0">
+            <p>{{i.course.data.hospital.data.name}}<i class="fa fa-angle-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
